@@ -12,6 +12,9 @@ struct SwiftData_CategoriesApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .modelContainer(for: [
+                    Category.self,
+                ])
         }
     }
 }
