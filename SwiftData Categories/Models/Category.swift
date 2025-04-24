@@ -1,0 +1,30 @@
+//
+//  Category.swift
+//  SwiftData Categories
+//
+//  Created by Remo Prozzillo on 24.04.2025.
+//
+
+
+import Foundation
+import SwiftData
+
+@Model
+class Category {
+    var id: UUID
+    var name: String
+    var icon: String
+    var items: [Item]
+    
+    init(
+        id: UUID = UUID(),
+        name: String = "",
+        icon: String = "folder",
+        items: [Item] = []
+    ) {
+        self.id = id
+        self.name = name
+        self.icon = icon
+        self.items = items
+    }
+}
