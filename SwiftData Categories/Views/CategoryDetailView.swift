@@ -50,7 +50,7 @@ struct CategoryDetailView: View {
 //                    } // swipeActions
                 } // ForEach
             } // List
-            .navigationTitle("Kategorien")
+            .navigationTitle(category.name)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
 //                    AddCategoryButton()

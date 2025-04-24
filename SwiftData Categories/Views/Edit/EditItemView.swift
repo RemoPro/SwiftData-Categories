@@ -12,7 +12,7 @@ struct EditItemView: View {
                 
                 // Hier kommt Category
             } header: {
-                Text("Item Name ändern")
+                Text("Edit Item")
             }
         }
         .navigationTitle(item.name)

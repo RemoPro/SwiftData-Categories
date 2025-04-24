@@ -28,11 +28,11 @@ struct AddItemView: View {
 //                } // Picker
                 
             } header: {
-                Text("Neues Item")
+                Text("New Item")
             }
             
             Section {
-                Button("Speichern") {
+                Button("Save") {
                     let itemNew = Item(name: name, category: category)
                     // 🔴 Kategorie runterreichen
                     modelContext.insert(itemNew)

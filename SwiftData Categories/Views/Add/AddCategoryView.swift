@@ -21,11 +21,11 @@ struct AddCategoryView: View {
             Section {
                 TextField("Name", text: $name)
             } header: {
-                Text("Neue Kategorie")
+                Text("New Category")
             }
             
             Section {
-                Button("Speichern") {
+                Button("Save") {
                     let categoryNew = Category(name: name)
                     modelContext.insert(categoryNew)
                     dismiss()

@@ -18,7 +18,7 @@ struct EditCategoryView: View {
             Section {
                 TextField("Name", text: $category.name)
             } header: {
-                Text("Kategorie Name ändern")
+                Text("Edit Category")
             }
         }
         .navigationTitle(category.name)

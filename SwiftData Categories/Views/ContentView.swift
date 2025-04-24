@@ -69,7 +69,7 @@ struct ContentView: View {
                     //                    } // swipeActions
                 } // ForEach
             } // List
-            .navigationTitle("Kategorien")
+            .navigationTitle("Categories")
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     //                    AddCategoryButton()
