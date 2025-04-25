@@ -27,7 +27,11 @@ struct ContentView: View {
                 //                }
                 
                 // AllItems View
-//                AllItemsView(item: Item)
+                NavigationLink {
+                    AllItemsView()
+                } label: {
+                    Label("All Items", systemImage: "list.dash")
+                }
                 
                 // Categories
                 ForEach(categories) { category in

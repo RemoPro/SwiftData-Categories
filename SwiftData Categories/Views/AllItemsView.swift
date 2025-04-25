@@ -8,13 +8,30 @@
 
 // In this View should all Items be shwon
 import SwiftUI
+import SwiftData
 
 struct AllItemsView: View {
-//    @Bindable var item: Item
-//    @Environment(\.modelContext) var modelContext
+    @Query(sort: \Item.name) var items: [Item]
+    @Environment(\.modelContext) var modelContext
+    @State private var showSheetAddCategory = false
+    @State private var showSheetEditCategory = false
+    //    @Bindable var item: Item
+    //    @Environment(\.modelContext) var modelContext
     
     var body: some View {
-        Text("All Items")
+        NavigationStack {
+            List {
+                ForEach(items) { item in
+                    VStack(alignment: .leading) {
+                        Text(item.name)
+                        Text(item.category?.name ?? "")
+                            .font(.caption)
+                    }
+                }
+                // 🔴 contextMenu for editing and delete
+            } // List
+            .navigationTitle("All Items")
+        }
     }
 }
 
