@@ -17,7 +17,7 @@ final class Item {
     
     init(
         id: UUID = UUID(),
-        name: String,
+        name: String = "",
         category: Category?
     ) {
         self.id = id
