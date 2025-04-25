@@ -22,9 +22,9 @@ struct CategoryDetailView: View {
 //                }
                 ForEach(category.items) { item in
                     // 🔴 Text
-//                    ForEach(category.items, id: \.self) { item in
-//                        Text(item.name)
-//                    }
+                    ForEach(category.items, id: \.self) { item in
+                        Text(item.name)
+                    }
                     
 //                        .contextMenu {
 //                    Button("Edit", systemImage: "pencil", action: {
