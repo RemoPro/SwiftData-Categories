@@ -34,7 +34,6 @@ struct AddItemView: View {
             Section {
                 Button("Save") {
                     let itemNew = Item(name: name, category: category)
-                    // 🔴 Kategorie runterreichen
                     modelContext.insert(itemNew)
                     dismiss()
                 }
@@ -43,7 +42,6 @@ struct AddItemView: View {
     }
 }
 
-// Beispiel wie mit test123 einfügen?
 //#Preview {
 //    AddItemView()
 //}
