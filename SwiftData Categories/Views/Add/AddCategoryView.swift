@@ -20,6 +20,7 @@ struct AddCategoryView: View {
         List {
             Section {
                 TextField("Name", text: $name)
+                //TODO: Add a Picker with some icons to choose from
             } header: {
                 Text("New Category")
             }

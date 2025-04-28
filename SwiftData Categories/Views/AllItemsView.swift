@@ -28,7 +28,7 @@ struct AllItemsView: View {
                             .font(.caption)
                     }
                 }
-                // 🔴 contextMenu for editing and delete
+                //TODO: contextMenu for editing and delete
             } // List
             .navigationTitle("All Items")
         }

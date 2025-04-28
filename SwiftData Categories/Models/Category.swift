@@ -19,7 +19,7 @@ class Category {
     init(
         id: UUID = UUID(),
         name: String = "",
-        icon: String = "folder",
+        icon: String = "folder", // Default icon
         items: [Item] = []
     ) {
         self.id = id
