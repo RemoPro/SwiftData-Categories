@@ -75,7 +75,7 @@ struct ContentView: View {
             } // List
             .navigationTitle("Categories")
             .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
+                ToolbarItem() {
                     //                    AddCategoryButton()
                     Button("Add new category", systemImage: "plus", action: {
                         showSheetAddCategory = true

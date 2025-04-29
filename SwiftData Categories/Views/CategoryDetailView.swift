@@ -52,7 +52,7 @@ struct CategoryDetailView: View {
             } // List
             .navigationTitle(category.name)
             .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
+                ToolbarItem() {
 //                    AddCategoryButton()
                     Button("Add new Item", systemImage: "plus", action: {
                         showSheetAddItem = true
