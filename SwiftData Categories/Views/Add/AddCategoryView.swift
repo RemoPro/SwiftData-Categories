@@ -12,14 +12,14 @@ import SwiftData
 
 struct AddCategoryView: View {
     
-    @State private var name = ""
     @Environment(\.modelContext) var modelContext
     @Environment(\.dismiss) var dismiss
+    @State private var category = Category()
     
     var body: some View {
         List {
             Section {
-                TextField("Name", text: $name)
+                TextField("Name", text: $category.name)
                 //TODO: Add a Picker with some icons to choose from
             } header: {
                 Text("New Category")
@@ -27,8 +27,7 @@ struct AddCategoryView: View {
             
             Section {
                 Button("Save") {
-                    let categoryNew = Category(name: name)
-                    modelContext.insert(categoryNew)
+                    modelContext.insert(category)
                     dismiss()
                 }
             }

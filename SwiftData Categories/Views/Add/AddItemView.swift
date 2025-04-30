@@ -4,12 +4,13 @@ import SwiftData
 
 struct AddItemView: View {
     
-    @State private var name = ""
-//    @State private var category = "" // isn't a string
     @Environment(\.modelContext) var modelContext
     @Environment(\.dismiss) var dismiss
     @Bindable var category: Category
-    @State private var selectedCategory: Category? = nil
+    @State private var name = ""
+    
+//    @State private var item = Item(category: Category())
+//    @State private var selectedCategory: Category? = nil
     
 //    @Binding var selectedCategory: Category
     
@@ -18,6 +19,7 @@ struct AddItemView: View {
         List {
             Section {
                 TextField("Name", text: $name)
+//                TextField("Name", text: $item.name)
                 
                 // Picker categories ForEach
 //                Picker("Kategorie", selection: $selectedCategory) {
@@ -35,6 +37,7 @@ struct AddItemView: View {
                 Button("Save") {
                     let itemNew = Item(name: name, category: category)
                     modelContext.insert(itemNew)
+//                    modelContext.insert(item)
                     dismiss()
                 }
             }
