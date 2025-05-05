@@ -17,7 +17,7 @@ struct ContentView: View {
     @State private var showSheetEditCategory = false
     
     var body: some View {
-        NavigationStack {
+        NavigationSplitView {
             List {
                 // When no Categories are created show only a "all items" View. That has to be before the ForEach?
                 
@@ -91,6 +91,8 @@ struct ContentView: View {
 //            .navigationDestination(for: Category.self) { category in
 //                CategoryEditView(category: category)
 //            }
+        } detail: {
+            ContentUnavailableView("Choose a category…", systemImage: "circle.slash")
         }
     }
 }

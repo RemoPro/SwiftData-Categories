@@ -19,17 +19,34 @@ struct AddCategoryView: View {
     var body: some View {
         List {
             Section {
-                TextField("Name", text: $category.name)
+                HStack {
+                    Label("Name", systemImage: "text.justify.left")
+                        .labelStyle(.iconOnly)
+                    TextField("Name", text: $category.name)
+                }
                 //TODO: Add a Picker with some icons to choose from
+                HStack {
+                    Label("Icon", systemImage: category.icon)
+                        .labelStyle(.iconOnly)
+                    TextField("Icon", text: $category.icon)
+                        .textCase(.lowercase)
+//                        .onSubmit {
+//                            print("icon: \(icon)")
+//                            iconPreview = icon.lowercased()
+//                            print("iconPreview: \(iconPreview)")
+//                        }
+                    
+                }
             } header: {
                 Text("New Category")
             }
             
             Section {
-                Button("Save") {
+                Button("Save", systemImage: "square.and.arrow.down", action: {
                     modelContext.insert(category)
                     dismiss()
-                }
+                })
+                
             }
         }
     }

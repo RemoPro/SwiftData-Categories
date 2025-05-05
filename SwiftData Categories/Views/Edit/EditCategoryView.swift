@@ -10,16 +10,31 @@ import Foundation
 import SwiftUI
 
 struct EditCategoryView: View {
-    
+    @Environment(\.dismiss) var dismiss
     @Bindable var category: Category
     
     var body: some View {
         List {
             Section {
-                TextField("Name", text: $category.name)
+                HStack {
+                    Label("Name", systemImage: "text.justify.left")
+                        .labelStyle(.iconOnly)
+                    TextField("Name", text: $category.name)
+                }
+                HStack {
+                    Label("Icon", systemImage: category.icon)
+                        .labelStyle(.iconOnly)
+                    TextField("Icon", text: $category.icon)
+                        .textCase(.lowercase)
+                }
             } header: {
                 Text("Edit Category")
             }
+            
+            Button("Close", systemImage: "xmark", action: {
+                // close the sheet
+                dismiss()
+            })
         }
         .navigationTitle(category.name)
     }

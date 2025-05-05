@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 
 struct EditItemView: View {
-    
+    @Environment(\.dismiss) var dismiss
     @Bindable var item: Item
     
     var body: some View {
@@ -14,6 +14,11 @@ struct EditItemView: View {
             } header: {
                 Text("Edit Item")
             }
+            
+            Button("Close", systemImage: "xmark", action: {
+                // close the sheet
+                dismiss()
+            })
         }
         .navigationTitle(item.name)
     }

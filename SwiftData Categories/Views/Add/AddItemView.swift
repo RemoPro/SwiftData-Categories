@@ -34,12 +34,13 @@ struct AddItemView: View {
             }
             
             Section {
-                Button("Save") {
+                Button("Save", systemImage: "square.and.arrow.down", action: {
                     let itemNew = Item(name: name, category: category)
                     modelContext.insert(itemNew)
 //                    modelContext.insert(item)
                     dismiss()
-                }
+                })
+                
             }
         }
     }
