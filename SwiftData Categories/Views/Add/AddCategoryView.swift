@@ -14,7 +14,7 @@ struct AddCategoryView: View {
     
     @Environment(\.modelContext) var modelContext
     @Environment(\.dismiss) var dismiss
-    @State private var category = Category()
+  @State private var category = Category(name: "")
     
     var body: some View {
         List {

@@ -15,6 +15,9 @@ struct SwiftData_CategoriesApp: App {
                 .modelContainer(for: [
                     Category.self,
                 ])
+                .onAppear {
+                  let newCategory = Category(name: "My shiny new item")
+                }
         }
     }
 }

@@ -20,35 +20,43 @@ struct CategoryDetailView: View {
 //                if items.isEmpty {
 //                    ContentUnavailableView("No Items yet.", image: "circle.slash")
 //                }
-                ForEach(category.items) { item in
-                    // 🔴 Text
-                    ForEach(category.items, id: \.self) { item in
-                        Text(item.name)
-                    }
-                    
-//                        .contextMenu {
-//                    Button("Edit", systemImage: "pencil", action: {
-//                        // 🔴 show a sheet for editing the category name so
-//                    showSheetEditCategory = true
-//                    })
-                    // 🔴 I'd like more that way for delete as it isn't easy accidentinally triggered
-                    // role: .destructive is only available with this "bad" way with the Label on the end?
-//                            Button(role: .destructive) {
-//                                modelContext.delete(category)
-//                            } label: {
-//                                Label("Delete", system: "trash")
-//                            }
-//                        }
-                    
-//                    NavigationLink(value: category) {
-//                        Text(category.name)
+//              if let items = category.items {
+              ForEach(category.items) { item in
+
+                }
+//              }
+
+
+
+//                ForEach(category.items) { item in
+//                    // 🔴 Text
+//                    ForEach(category.items, id: \.self) { item in
+//                        Text(item.name)
 //                    }
-//                    .swipeActions {
-//                        Button("Löschen", role: .destructive) {
-//                            modelContext.delete(category)
-//                        }
-//                    } // swipeActions
-                } // ForEach
+//                    
+////                        .contextMenu {
+////                    Button("Edit", systemImage: "pencil", action: {
+////                        // 🔴 show a sheet for editing the category name so
+////                    showSheetEditCategory = true
+////                    })
+//                    // 🔴 I'd like more that way for delete as it isn't easy accidentinally triggered
+//                    // role: .destructive is only available with this "bad" way with the Label on the end?
+////                            Button(role: .destructive) {
+////                                modelContext.delete(category)
+////                            } label: {
+////                                Label("Delete", system: "trash")
+////                            }
+////                        }
+//                    
+////                    NavigationLink(value: category) {
+////                        Text(category.name)
+////                    }
+////                    .swipeActions {
+////                        Button("Löschen", role: .destructive) {
+////                            modelContext.delete(category)
+////                        }
+////                    } // swipeActions
+//                } // ForEach
             } // List
             .navigationTitle(category.name)
             .toolbar {
