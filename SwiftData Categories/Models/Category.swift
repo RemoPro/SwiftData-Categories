@@ -18,7 +18,7 @@ class Category {
     
     init(
         id: UUID = UUID(),
-        name: String,
+        name: String = "",
         icon: String = "folder", // Default icon
         items: [Item] = []
     ) {
