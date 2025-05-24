@@ -8,8 +8,8 @@ struct EditItemView: View {
     var body: some View {
         List {
             Section {
-                TextField("Name", text: $item.name)
-                
+              TextField("Name", text: $item.name.withDefault(value: ""))
+
                 // Hier kommt Category
             } header: {
                 Text("Edit Item")
@@ -20,7 +20,7 @@ struct EditItemView: View {
                 dismiss()
             })
         }
-        .navigationTitle(item.name)
+        .navigationTitle(item.name ?? "")
     }
 }
 

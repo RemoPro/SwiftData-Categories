@@ -44,7 +44,7 @@ struct ContentView: View {
                     NavigationLink {
                         CategoryDetailView(category: category)
                     } label: {
-                        Label(category.name, systemImage: category.icon)
+                        Label(category.name ?? "", systemImage: category.icon ?? "")
                     }
                     .contextMenu {
                         Button("Edit", systemImage: "pencil", action: {
