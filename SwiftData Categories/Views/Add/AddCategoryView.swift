@@ -22,13 +22,13 @@ struct AddCategoryView: View {
                 HStack {
                     Label("Name", systemImage: "text.justify.left")
                         .labelStyle(.iconOnly)
-                    TextField("Name", text: $category.name)
+                  TextField("Name", text: $category.name.withDefault(value: ""))
                 }
                 //TODO: Add a Picker with some icons to choose from
                 HStack {
-                    Label("Icon", systemImage: category.icon)
+                    Label("Icon", systemImage: category.icon ?? "")
                         .labelStyle(.iconOnly)
-                    TextField("Icon", text: $category.icon)
+                  TextField("Icon", text: $category.icon.withDefault(value: ""))
                         .textCase(.lowercase)
 //                        .onSubmit {
 //                            print("icon: \(icon)")

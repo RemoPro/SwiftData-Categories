@@ -20,11 +20,11 @@ struct CategoryDetailView: View {
 //                if items.isEmpty {
 //                    ContentUnavailableView("No Items yet.", image: "circle.slash")
 //                }
-//              if let items = category.items {
-              ForEach(category.items) { item in
+              if let items = category.items {
+              ForEach(items) { item in
 
                 }
-//              }
+              }
 
 
 
@@ -58,7 +58,7 @@ struct CategoryDetailView: View {
 ////                    } // swipeActions
 //                } // ForEach
             } // List
-            .navigationTitle(category.name)
+            .navigationTitle(category.name ?? "")
             .toolbar {
                 ToolbarItem() {
 //                    AddCategoryButton()

@@ -11,10 +11,10 @@ import SwiftData
 
 @Model
 class Category {
-    var id: UUID
-    var name: String
-    var icon: String
-    var items: [Item]
+    var id: UUID?
+    var name: String?
+    var icon: String?
+    var items: [Item]?
     
     init(
         id: UUID = UUID(),

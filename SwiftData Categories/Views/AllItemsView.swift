@@ -23,7 +23,7 @@ struct AllItemsView: View {
             List {
                 ForEach(items) { item in
                     VStack(alignment: .leading) {
-                        Text(item.name)
+                        Text(item.name ?? "")
                         Text(item.category?.name ?? "")
                             .font(.caption)
                     }
