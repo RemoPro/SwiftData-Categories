@@ -2,6 +2,14 @@
 //  AddCategoryView.swift
 //  SwiftData Categories
 //
+//  Created by Remo Prozzillo on 29.07.2025.
+//
+
+
+//
+//  AddCategoryView.swift
+//  SwiftData Categories
+//
 //  Created by Remo Prozzillo on 24.04.2025.
 //
 
