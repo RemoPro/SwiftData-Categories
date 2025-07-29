@@ -14,7 +14,7 @@ struct ContentView: View {
     @Query(sort: \Category.name) var categories: [Category]
     @Environment(\.modelContext) var modelContext
     @State private var showSheetAddCategory = false
-    @State private var showSheetEditCategory = false
+    @State private var editingCategory: Category?
     
     var body: some View {
         NavigationSplitView {
@@ -47,9 +47,9 @@ struct ContentView: View {
                         Label(category.name, systemImage: category.icon)
                     }
                     .contextMenu {
+                        // Edit
                         Button("Edit", systemImage: "pencil", action: {
-                            // 🔴 show a sheet for editing the category name so
-                            showSheetEditCategory = true
+                            editingCategory = category
                         })
                         
                         // Delete
@@ -58,21 +58,17 @@ struct ContentView: View {
                         } label: {
                             Label("Delete", systemImage: "trash")
                         }
-                    }
-                    .sheet(isPresented: $showSheetEditCategory) {
-                        EditCategoryView(category: category)
-                            .presentationDetents([.height(450)])
-                    }
-                    //                    NavigationLink(value: category) {
-                    //                        Text(category.name)
-                    //                    }
-                    //                    .swipeActions {
-                    //                        Button("Löschen", role: .destructive) {
-                    //                            modelContext.delete(category)
-                    //                        }
-                    //                    } // swipeActions
+                    } // contextMenu
                 } // ForEach
             } // List
+            .sheet(item: $editingCategory) { category in
+                EditCategoryView(category: category)
+#if os(iOS)
+                    .presentationDetents([.height(220)])
+#elseif os(macOS)
+                    .frame(height: 150)
+#endif
+            } // sheet
             .navigationTitle("Categories")
             .toolbar {
                 ToolbarItem() {
@@ -80,17 +76,17 @@ struct ContentView: View {
                     Button("Add new category", systemImage: "plus", action: {
                         showSheetAddCategory = true
                     })
-                    .sheet(isPresented: $showSheetAddCategory) {
-                        AddCategoryView()
-                            .presentationDetents([.height(450)])
-                    }
                     //                    .keyboardShortcut("n", modifiers: [.command, .option])
                 }
-            }
-            
-//            .navigationDestination(for: Category.self) { category in
-//                CategoryEditView(category: category)
-//            }
+            } // toolbar
+            .sheet(isPresented: $showSheetAddCategory) {
+                AddCategoryView()
+#if os(iOS)
+                    .presentationDetents([.height(220)])
+#elseif os(macOS)
+                    .frame(height: 150)
+#endif
+            } // sheet
         } detail: {
             ContentUnavailableView("Choose a category…", systemImage: "circle.slash")
         }
