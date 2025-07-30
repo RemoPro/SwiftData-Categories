@@ -19,12 +19,6 @@ struct ContentView: View {
     var body: some View {
         NavigationSplitView {
             List {
-                // When no Categories are created show only a "all items" View. That has to be before the ForEach?
-                
-                // When no items are in the database show
-                //                if items.isEmpty {
-                //                    ContentUnavailableView("No Items yet.", image: "circle.slash")
-                //                }
                 
                 // AllItems View
                 NavigationLink {
@@ -35,12 +29,7 @@ struct ContentView: View {
                 
                 // Categories
                 ForEach(categories) { category in
-                    // 🔴 NavigationLink to the category which should contain items
-                    //                    Text(category.name)
-                    // 🔴 Pass the name to the View as it must know which category to display? And then in that View show the + Button for creating new items?
-                    //                    NavigationLink(destination: CategoryView(category: category)) {
-                    //                        Label(category.name, systemImage: category.icon)
-                    //                    }
+
                     NavigationLink {
                         CategoryDetailView(category: category)
                     } label: {
