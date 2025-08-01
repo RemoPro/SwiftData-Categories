@@ -26,11 +26,11 @@ struct CategoryDetailView: View {
                             })
                             
                             // Delete
-                            //                            Button(role: .destructive) {
-                            //                                modelContext.delete(category)
-                            //                            } label: {
-                            //                                Label("Delete", system: "trash")
-                            //                            }
+                            Button(role: .destructive) {
+                                modelContext.delete(item)
+                            } label: {
+                                Label("Delete", systemImage: "trash")
+                            }
                         } // contextMenu
                     
                 } // ForEach
@@ -46,7 +46,6 @@ struct CategoryDetailView: View {
             .navigationTitle(category.name)
             .toolbar {
                 ToolbarItem() {
-                    //                    AddCategoryButton()
                     Button("Add new Item", systemImage: "plus", action: {
                         showSheetAddItem = true
                     })
