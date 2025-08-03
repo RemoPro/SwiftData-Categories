@@ -26,9 +26,9 @@ struct ContentView: View {
                 NavigationLink {
                     AllItemsView()
                 } label: {
-                    Label("All Items", systemImage: "list.dash")
-                    Spacer()
                     HStack {
+                        Label("All Items", systemImage: "list.dash")
+                        Spacer()
                         Text("\(items.count)")
                             .foregroundStyle(.secondary)
                     }
