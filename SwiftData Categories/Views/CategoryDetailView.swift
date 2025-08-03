@@ -15,7 +15,8 @@ struct CategoryDetailView: View {
         NavigationStack {
             List {
                 
-                ForEach(category.items) { item in
+                // Show the items sorted alphabetically
+                ForEach(category.items.sorted { $0.name.localizedCompare($1.name) == .orderedAscending }) { item in
                     
                     Text(item.name)
                         .contextMenu {
