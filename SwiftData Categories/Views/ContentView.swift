@@ -12,6 +12,8 @@ import SwiftData
 struct ContentView: View {
     
     @Query(sort: \Category.name) var categories: [Category]
+    
+    @Query(sort: \Item.name) var items: [Item]
     @Environment(\.modelContext) var modelContext
     @State private var showSheetAddCategory = false
     @State private var editingCategory: Category?
@@ -25,6 +27,11 @@ struct ContentView: View {
                     AllItemsView()
                 } label: {
                     Label("All Items", systemImage: "list.dash")
+                    Spacer()
+                    HStack {
+                        Text("\(items.count)")
+                            .foregroundStyle(.secondary)
+                    }
                 }
                 
                 // Categories
@@ -34,6 +41,11 @@ struct ContentView: View {
                         CategoryDetailView(category: category)
                     } label: {
                         Label(category.name, systemImage: category.icon)
+                        HStack {
+                            Spacer()
+                            Text("\(category.items.count)")
+                                .foregroundStyle(.secondary)
+                        }
                     }
                     .contextMenu {
                         // Edit
